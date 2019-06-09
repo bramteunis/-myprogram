@@ -6,6 +6,9 @@ import urllib.request as urllib2
 from pathlib import Path
 
 needed="1"
+access1 = float
+access1 = (0)
+
 username = os.getlogin()
 
 
@@ -1292,7 +1295,10 @@ class app():
     def __init__(self):
         #Button(LG,text="run",command=self.run_progressBar).place(x=0,y=0)
         Label(LG,text="Bezig met Updaten", font=('arial',20,'bold'),bg="white").place(x=530,y=400)
-        self.progress_bar = ttk.Progressbar(LG, orient = 'horizontal', length = 400, mode = 'determinate')
+        s = ttk.Style()
+        s.theme_use('default')
+        s.configure("Horizontal.TProgressbar", foreground='red', background='red')
+        self.progress_bar = ttk.Progressbar(LG,style="Horizontal.TProgressbar", orient = 'horizontal', length = 400)
         self.progress_bar.place(x=450,y=500)
         #def run_progressBar(self):
          
@@ -1310,6 +1316,7 @@ def internet_on():
         if data1[0] == needed: pass
         else:
             if messagebox.askyesno("Systeem", "Je hebt een update nodig. Wil je deze downloaden") == True:
+                access1 = (1)
                 webbrowser.open_new_tab('https://github.com/bramteunis/-myprogram/archive/master.zip')
                 for x in range (0,100):
                     app()
@@ -1327,8 +1334,8 @@ def internet_on():
                         #counter += (1)
                         #if counter == (99):
                         #    messagebox.showinfo("Systeem", "Controleer of je Internet hebt en probeer het opnieuw")
-                        break
-            else: pass
+                        pass
+            else: app()
         
 
     def geenwifi():
@@ -1344,81 +1351,85 @@ if loginofniet11 == "Nooit":
     homepage()
 else:
     internet_on()
-    frame1 = Canvas( LG, bg ="white", height=4830,highlightthickness=0, width=1810,bd=0)
-    image1 = PhotoImage(file="beginschermfoto3.png")
-    image = frame1.create_image( 1000, 0, anchor = NE,image=image1)
-    var = IntVar()
-    frame1.place(x=500,y=-3)
+    if access1 == (1):
+        frame1 = Canvas( LG, bg ="white", height=4830,highlightthickness=0, width=1810,bd=0)
+        image1 = PhotoImage(file="beginschermfoto3.png")
+        image = frame1.create_image( 1000, 0, anchor = NE,image=image1)
+        var = IntVar()
+        frame1.place(x=500,y=-3)
 
-    frame2 = Canvas( LG, bg ="white", height=130,highlightthickness=0, width=284,bd=0)
-    image2 = PhotoImage(file="logo1.png")
-    image = frame2.create_image(284,0,anchor=NE,image=image2)
-    frame2.place(x=20,y=30)
+        frame2 = Canvas( LG, bg ="white", height=130,highlightthickness=0, width=284,bd=0)
+        image2 = PhotoImage(file="logo1.png")
+        image = frame2.create_image(284,0,anchor=NE,image=image2)
+        frame2.place(x=20,y=30)
 
-    frame3 = Canvas( LG, bg ="white", height=30, width=30,highlightthickness=0,bd=0)
-    image3 = PhotoImage(file="terug1.png")
-    image = frame3.create_image(40,0,anchor=NE,image=image3)
-    frame3.place(x=50,y=679)
+        frame3 = Canvas( LG, bg ="white", height=30, width=30,highlightthickness=0,bd=0)
+        image3 = PhotoImage(file="terug1.png")
+        image = frame3.create_image(40,0,anchor=NE,image=image3)
+        frame3.place(x=50,y=679)
 
-    Button(LG,text='Forgot your password?',width=20,bd=0,height=1,font=('arial', 13),bg="white",fg="blue",command=forgotLG).place(x=140,y=600)
-    Button(LG,text='Exit',width=7,bd=0,height=1,font=('arial', 8),bg="white",command=LG.destroy).place(x=85,y=683)
+        Button(LG,text='Forgot your password?',width=20,bd=0,height=1,font=('arial', 13),bg="white",fg="blue",command=forgotLG).place(x=140,y=600)
+        Button(LG,text='Exit',width=7,bd=0,height=1,font=('arial', 8),bg="white",command=LG.destroy).place(x=85,y=683)
 
-    Label(LG,text='Username:',bd=0,font=('arial', 10),bg="white").place(x=70,y=270)
-    Label(LG,text='Password:',bd=0,font=('arial', 10),bg="white").place(x=70,y=370)
-    L7=Label(LG,text='Good afternoon,',bd=0,font=('arial', 15, 'bold'),bg="white").place(x=70,y=180)
-    L8=Label(LG,text='welcome back!',bd=0,font=('arial', 14),bg="white").place(x=230,y=181)
-    L9=Label(LG,text='Feel free to login anytime.',bd=0,font=('arial', 11),bg="white").place(x=70,y=210)
-    Checkbutton(LG,text="remember me",bg="white",variable=var3,onvalue=1,offvalue=0).place(x=70,y=470)
-    t1=Entry(LG,show='*',textvariable=value1,bd=2,font=medium_font,relief="groove").place(x=70,y=400)
-    if counter1 == '1':
-        g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
-        w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
-        Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikersnaam1,bg=safecolor,relief="ridge").place(x=70,y=540)
-        box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1); remembertest=box.current(0)
-        box.place(x=70,y=300)
-    if counter1 == '2':
-        g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
-        g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
-        w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
-        w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
-        Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers2,bg=safecolor,relief="ridge").place(x=70,y=540)
-        box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2); remembertest=box.current(0)
-        box.place(x=70,y=300)
-    if counter1 == '3':
-        g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
-        g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
-        g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
-        w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
-        w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
-        w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
-        Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers3,bg=safecolor,relief="ridge").place(x=70,y=540)
-        box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3); remembertest=box.current(0)
-        box.place(x=70,y=300)
-    if counter1 == '4':
-        g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
-        g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
-        g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
-        g4 = open("gebruiker1.txt", "r").readlines()[3]; gebruiker4=g4.strip()
-        w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
-        w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
-        w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
-        w4 = open("gebruiker1.txt", "r").readlines()[8]; wachtwoord4=w4.strip()
-        Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers4,bg=safecolor,relief="ridge").place(x=70,y=540)
-        box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3,gebruiker4); remembertest=box.current(0)
-        box.place(x=70,y=300)
-    if counter1 == '5':
-        g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
-        g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
-        g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
-        g4 = open("gebruiker1.txt", "r").readlines()[3]; gebruiker4=g4.strip()
-        g5 = open("gebruiker1.txt", "r").readlines()[4]; gebruiker5=g5.strip()
-        w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
-        w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
-        w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
-        w4 = open("gebruiker1.txt", "r").readlines()[8]; wachtwoord4=w4.strip()
-        w5 = open("gebruiker1.txt", "r").readlines()[9]; wachtwoord5=w5.strip()
-        Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers5,bg=safecolor,relief="ridge").place(x=70,y=540)
-        box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3,gebruiker4,gebruiker5); box.current(0)
-        box.place(x=70,y=300)
-    def sluiten1(): LG.destroy()
+        Label(LG,text='Username:',bd=0,font=('arial', 10),bg="white").place(x=70,y=270)
+        Label(LG,text='Password:',bd=0,font=('arial', 10),bg="white").place(x=70,y=370)
+        L7=Label(LG,text='Good afternoon,',bd=0,font=('arial', 15, 'bold'),bg="white").place(x=70,y=180)
+        L8=Label(LG,text='welcome back!',bd=0,font=('arial', 14),bg="white").place(x=230,y=181)
+        L9=Label(LG,text='Feel free to login anytime.',bd=0,font=('arial', 11),bg="white").place(x=70,y=210)
+        Checkbutton(LG,text="remember me",bg="white",variable=var3,onvalue=1,offvalue=0).place(x=70,y=470)
+        t1=Entry(LG,show='*',textvariable=value1,bd=2,font=medium_font,relief="groove").place(x=70,y=400)
+        if counter1 == '1':
+            g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
+            w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
+            Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikersnaam1,bg=safecolor,relief="ridge").place(x=70,y=540)
+            box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1); remembertest=box.current(0)
+            box.place(x=70,y=300)
+        if counter1 == '2':
+            g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
+            g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
+            w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
+            w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
+            Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers2,bg=safecolor,relief="ridge").place(x=70,y=540)
+            box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2); remembertest=box.current(0)
+            box.place(x=70,y=300)
+        if counter1 == '3':
+            g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
+            g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
+            g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
+            w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
+            w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
+            w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
+            Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers3,bg=safecolor,relief="ridge").place(x=70,y=540)
+            box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3); remembertest=box.current(0)
+            box.place(x=70,y=300)
+        if counter1 == '4':
+            g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
+            g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
+            g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
+            g4 = open("gebruiker1.txt", "r").readlines()[3]; gebruiker4=g4.strip()
+            w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
+            w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
+            w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
+            w4 = open("gebruiker1.txt", "r").readlines()[8]; wachtwoord4=w4.strip()
+            Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers4,bg=safecolor,relief="ridge").place(x=70,y=540)
+            box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3,gebruiker4); remembertest=box.current(0)
+            box.place(x=70,y=300)
+        if counter1 == '5':
+            g1 = open("gebruiker1.txt", "r").readlines()[0]; gebruiker1=g1.strip()
+            g2 = open("gebruiker1.txt", "r").readlines()[1]; gebruiker2=g2.strip()
+            g3 = open("gebruiker1.txt", "r").readlines()[2]; gebruiker3=g3.strip()
+            g4 = open("gebruiker1.txt", "r").readlines()[3]; gebruiker4=g4.strip()
+            g5 = open("gebruiker1.txt", "r").readlines()[4]; gebruiker5=g5.strip()
+            w1 = open("gebruiker1.txt", "r").readlines()[5]; wachtwoord1=w1.strip()
+            w2 = open("gebruiker1.txt", "r").readlines()[6]; wachtwoord2=w2.strip()
+            w3 = open("gebruiker1.txt", "r").readlines()[7]; wachtwoord3=w3.strip()
+            w4 = open("gebruiker1.txt", "r").readlines()[8]; wachtwoord4=w4.strip()
+            w5 = open("gebruiker1.txt", "r").readlines()[9]; wachtwoord5=w5.strip()
+            Button(LG,text='login',bd=0,fg="white",font=('arial', 20), width= 20, height=1, command= Gebruikers5,bg=safecolor,relief="ridge").place(x=70,y=540)
+            box=ttk.Combobox(LG,textvariable=value3,font=medium_font,state='readonly'); box['values']=(gebruiker1,gebruiker2,gebruiker3,gebruiker4,gebruiker5); box.current(0)
+            box.place(x=70,y=300)
+        def sluiten1(): LG.destroy()
+    else:
+        LG.destroy()
+        
 LG.mainloop()

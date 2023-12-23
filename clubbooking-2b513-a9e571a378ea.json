@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "clubbooking-2b513",
+  "private_key_id": "a9e571a378ea16a2f0152859ddfc7c6e27a02455",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDOTfCq9zpAjbHl\nHJ7KvGyOiIj+muU5VOo/PkqvDUlPNDWO7dmMNDViY4w8WXfvUAo0Q605Ra5EReT0\nBA4rlGE8yjq5u7an5OoCn4llul+fKWcKR27zjLdnWxallWrVsiw4pjR3kNaSFXqp\ne9/65AsgIB4PT1T2hE9xe3/E86MlRfTBU+2tswFcPdgxGVwG5M4DUJjuZN6nMBi+\nwDyidIbPQFciP3jhPeJQsQScN7yuy/H5pnbKPKzToROCoCA8RYUh420rz+c/mHyS\nM4WIMx4KtgqnoZsAUqPB9pswXNkWSdhxE7AU7diHj8FiaTR+xWRmX5blj6hObNbK\npcYm5bB/AgMBAAECggEAUL03Cans7dOmggyT5rMcZyHvP3l+aVQewvaNgvnXrXw4\n08GpSNIr7GAaQ4oeQpXYEIFF+2qWW5jhFFC7/Pk6nvBkUEkzIH0ZykIGoz3v61no\nPiEbvoxdQMFo2Q/jelObM+Z0FTElkJGAanEVBNsXsZBwQzyge0Pn1XloVTump1CH\n1CHRaO5rSUi6XeuRrbprw/vP5EE+j8oA67D/R6GgAqNSJS22WY86Z+e2WH00p9V4\n7r5y/K3ofcN0I90rlAHWPdq0h4wKpC24fk/JLG2nh1YuUxRXNzaBRJ7KQYk/v8jD\nEZ50COQu7vE9e+bBf5Cx5hRkxKHmEcWW93NISBcCsQKBgQD0TPp6Na3lfOGAUdsQ\noqdIYdm1KU65/fOFfm47L8ea7Gtw+ozqI4UR01CYQ38BkMrnEMAn/DdmUOrIU6P5\nmBJ6Vmsh78fjluWhtwLmZg5IddeVM/TkuLI6wUrsSmb5gpZOAThkKcrN1cDKZ0rT\nT1VgtrA9V8Kb2gn2oMVU1GlP0QKBgQDYLyThVpM1Hh3evrsG9pZJ9GlXdcPyHdM5\nAqDG1nPQLlC4vHJ1b7Lvlul++/eBa84ualNb4jp2hJbN5xfS99jFTK+FOiOhTZj9\n/9Kerp1OdmywDudnI6HxRKlHa8q2VvnshG6zZN57wQ2G6Cb24OT5Ii4cduH6G5Fi\nmJgv7q/fTwKBgQDgsXBrOLXxbZOmRyM6QK+lNkJbilubW4RAUtGl5EMtLaeAKSG0\nM+kvRPFKqkHFOdw0+8YQwLxfgar/h1Y4uXK9TICKnRR3MhGQVFf5ewJGCQS4eSoT\nuABNY/y6KZBeioodwqeQEJQ0Dxab0rcSdVQseLrOIMqgN8GUMbhtVlRqEQKBgQCq\nJejUBizUaMC/uMRBBcFhsaFbec/f9sNxInViKhV664kS7Rb1ARYHZnKeRDgYP75G\nX979+X9kGpUKt/DTVcjh+KpIpGq4oPdiKoAd7nbW83Q12XUdgzkJSK4nDVq9ypTo\nJ49tWF2Xb2lzHbLVKkptHw7FznerPxldTZayWx1HFwKBgEI2yc/t5hoteETYhIJ8\nCZH7ovQ+UzZ438vng3y6YBJU8tEnnAbgkNyMf2LufUbC67WgWU1l9hX5Rn1dNMLq\nu3BzIeygo6m8SMWgG289ZMLqviKMeQ8DvIvdk8o+ypmAeFx6xnXG592E9RBvCAlb\nn5D6+VgZOU02HKx7z6wSRft9\n-----END PRIVATE KEY-----\n",
+  "client_email": "clubbooking-github-bot@clubbooking-2b513.iam.gserviceaccount.com",
+  "client_id": "114182383209106450588",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/clubbooking-github-bot%40clubbooking-2b513.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
